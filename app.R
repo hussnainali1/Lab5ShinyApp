@@ -31,7 +31,7 @@ server <- function(input, output) {
     result <- lab5AdvanceR::fetchWeatherData(cityName)
       plot1 <-  ggplot2::ggplot(data = result, mapping = ggplot2::aes(x = temp_c, y = time))+
       # ggplot2::geom_point() +  ggplot2::geom_line() +
-        ggplot2::geom_line(aes(group=1))+
+        ggplot2::geom_line(ggplot2::aes(group=1))+
         ggplot2::geom_point(shape=21, color="red", fill="#69b3a2", size=2) +
         ggplot2::ggtitle("24 Hour Weather Forcast for a Current Date") +
         ggplot2::labs(y = "Date and TIme", x = "Temperature in Degrees")+
